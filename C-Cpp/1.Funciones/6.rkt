@@ -1,0 +1,21 @@
+#lang racket
+(define (filas letra renglones col)
+  (if (> 1 renglones)
+      (void)
+      (begin
+        (columnas letra col)
+        (newline)
+        (filas letra (- renglones 1) col)
+      )
+  )
+)
+(define (columnas letra col)
+  (if (>= 1 col)
+      (display letra)
+      (begin
+        (display letra)
+        (columnas letra (- col 1))
+      )
+  )
+)
+(filas "A" 9 5)

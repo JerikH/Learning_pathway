@@ -1,0 +1,15 @@
+#lang racket
+(define (aux contador acumule base exponente)
+(if (<= contador exponente)
+    (aux (+ contador 1) (* acumule base) base exponente)
+    acumule
+)
+)
+(define (potencia base exponente)
+(aux 1 1 base exponente )
+)
+(displayln "Ingrese la base")
+(define base(read))
+(displayln "Ingrese el exponente")
+(define expo(read))
+(potencia base expo)

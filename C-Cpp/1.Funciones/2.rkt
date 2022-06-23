@@ -1,0 +1,33 @@
+#lang racket
+(define n 1)
+(define (potencia base expo)
+  (if (> expo 1)
+      (begin
+        (if (= expo n)
+            (begin
+              (printf "~a" acum)
+            )
+            (begin
+              (set! acum (* acum base))
+              (set! n (+ n 1))
+              (potencia base expo)
+            )
+        )
+      )
+      (begin
+        (if (= expo 1)
+            (printf "~a" base)
+            (if (= expo 0)
+                (display 1)
+                (void)
+            )
+        )
+      )
+  )
+)
+(displayln "Ingrese la base")
+(define base(read))
+(define acum base)
+(displayln "Ingrese el exponente")
+(define expo(read))
+(potencia base expo)
